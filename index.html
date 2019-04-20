@@ -7,7 +7,19 @@
   <body style="background-color:powderblue;">
     <h1 style="color:#0066cc;text-align:center;">Athan</h1>
     <!-- All of the Node.js APIs are available in this renderer process. -->
-
+jQuery(function($) {
+	 $.getJSON('https://muslimsalat.com/london/daily.json?key=API_KEY&jsoncallback=?', function (times)
+	 {
+		 $('.prayerTimesExample')
+		 .append('Today in '+times.title)
+		 .append(' Fajr: '+times.items[0].fajr)
+		 .append(' Dhuhr: '+times.items[0].dhuhr)
+		 .append(' Asr: '+times.items[0].asr)
+		 .append(' Maghrib: '+times.items[0].maghrib)
+		 .append(' Isha: '+times.items[0].isha)
+		 .append(' by MuslimSalat.com');
+	 });
+});
      <script type="text/javascript" src="PrayTimes.js"></script> 
      prayTimes.getTimes(new Date(), [43, -80], -5);
     <script>
