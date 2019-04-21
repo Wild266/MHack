@@ -12,17 +12,6 @@ const displaySleepIconPath = path.join(__dirname, 'images', 'day-19.png');
 app.once('window-all-closed',function() { app.quit(); });
 
 app.on('ready', function(){
-  
-  let w = new BrowserWindow();
-    w.once('closed', function() { w = null; });
-    w.loadURL('file://' + join(__dirname, 'index.html'));
-    if (process.env.ELECTRON_IN_PAGE_SEARCH_DEBUG) {
-        w.webContents.openDevTools({mode: 'detach'});
-    }
-  
-  
-  
-  
   win = new BrowserWindow({show: false});
   appIcon = new Tray(disabledIconPath);
   let blocker_id = null;
