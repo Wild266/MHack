@@ -1,16 +1,28 @@
 // Modules to control application life and create native browser window
-
+const electron = require('electron');
 const {app, Tray, Menu, powerSaveBlocker, BrowserWindow} = require('electron');
 const path = require('path');
-
+const join = require('path').join;
 let appIcon;
 let win;
 const disabledIconPath = path.join(__dirname, 'images', 'night-19.png');
 const appSuspensionIconPath = path.join(__dirname, 'images', 'sunset-19.png');
 const displaySleepIconPath = path.join(__dirname, 'images', 'day-19.png');
 
+app.once('window-all-closed',function() { app.quit(); });
 
 app.on('ready', function(){
+  
+  let w = new BrowserWindow();
+    w.once('closed', function() { w = null; });
+    w.loadURL('file://' + join(__dirname, 'index.html'));
+    if (process.env.ELECTRON_IN_PAGE_SEARCH_DEBUG) {
+        w.webContents.openDevTools({mode: 'detach'});
+    }
+  
+  
+  
+  
   win = new BrowserWindow({show: false});
   appIcon = new Tray(disabledIconPath);
   let blocker_id = null;
