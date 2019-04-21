@@ -10,7 +10,7 @@ body {
 }
 div {
    word-wrap: break-word;
-   width: 100px;
+   width: 10px;
 }
 .electron-in-page-search-window {
   position: fixed;
