@@ -9,17 +9,6 @@ const disabledIconPath = path.join(__dirname, 'images', 'night-19.png');
 const appSuspensionIconPath = path.join(__dirname, 'images', 'sunset-19.png');
 const displaySleepIconPath = path.join(__dirname, 'images', 'day-19.png');
 
-import searchInPage from 'electron-in-page-search';
-// or
-const searchInPage = require('electron-in-page-search').default;
-
-import {remote} from 'electron';
-
-const inPageSearch = searchInPage(remote.getCurrentWebContents());
-
-document.getElementById('some-button').addEventListener('click', () => {
-    inPageSearch.openSearchWindow();
-});
 
 app.on('ready', function(){
   win = new BrowserWindow({show: false});
