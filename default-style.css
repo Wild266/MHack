@@ -8,6 +8,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Meiryo", sans-serif;
   overflow: hidden;
 }
+div {
+   word-wrap: break-word;
+   width: 100px;
+}
 .electron-in-page-search-window {
   position: fixed;
   top: 0;
